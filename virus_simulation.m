@@ -108,6 +108,10 @@ for i=1:Lm
                 v(i,j)=v(i,j)-1;
             end
         end
+        dp=v(i,j)-tmp;
+        if rand()<dp*(1-exp(-dv*v(i,j)*dt))
+            v(i,j)=v(i,j)-dp;
+        end
     end
 end
 
