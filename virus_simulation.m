@@ -93,9 +93,9 @@ for k=1:2000
         newv=poissrnd(alpha.*I*di*dt/2);
         [tr,yr,newv]=mutation(newv,Lm,dx,u1,u2,(k-1)*dt+i*dt/2,tr,yr);
         v=v+newv;
-        v=dey(v,Lm,dv,dt/2);
         % diffusion
         v=(eye(Lm)+diffusionv*dt/2)*v;
+        v=dey(v,Lm,dv,dt/2);
     end
 end
 
