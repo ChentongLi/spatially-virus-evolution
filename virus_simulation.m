@@ -95,8 +95,8 @@ for k=1:2000
         v=v+newv;
         % diffusion
         v=(eye(Lm)+diffusionv*dt/2)*v;
-        v=dey(v,Lm,dv,dt/2);
     end
+    v=dey(v,Lm,dv,dt);
 end
 
 function v=dey(v,Lm,dv,dt)
