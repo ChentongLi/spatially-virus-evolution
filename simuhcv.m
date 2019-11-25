@@ -156,7 +156,7 @@ end
 
 function newv=mutation(newv,Lm,u1,u2)
 for i=1:Lm
-    tmp=floor(newv(i,1));
+    tmp=newv(i,1);
     for m=1:tmp
         tmpr=rand();
         if tmpr<=u1
@@ -168,14 +168,14 @@ for i=1:Lm
             newv(i,3)=newv(i,3)+1;
         end
     end
-    tmp=floor(newv(i,2));
+    tmp=newv(i,2);
     for m=1:tmp
         if rand()<=u2
             newv(i,2)=newv(i,2)-1;
             newv(i,4)=newv(i,4)+1;
         end
     end
-    tmp=floor(newv(i,3));
+    tmp=newv(i,3);
     for m=1:tmp
         if rand()<=u1
             newv(i,3)=newv(i,3)-1;
