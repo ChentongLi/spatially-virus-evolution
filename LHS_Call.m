@@ -1,4 +1,5 @@
 function s=LHS_Call(xmin,xmean,xmax,xsd,nsample,distrib,threshold)
+% This function comes from the website http://malthus.micro.med.umich.edu/lab/usadata/
 % s=latin_hs(xmean,xsd,nsample,nvar)
 % LHS from normal distribution, no correlation
 % method of Stein
