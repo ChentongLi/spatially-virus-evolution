@@ -2,11 +2,13 @@ function prcc
 
 runs=1000;
 
-beta_LHS=lhsnorm(2.02,1,runs)*1e-7/24;
-alpha_LHS=lhsnorm(22.55,10,runs)/24;
-Dv_LHS=LHS_Call(1.6,15.8,30,0.04,runs,'unif')*1e-8*3600;
-di_LHS=LHS_Call(1e-3,1.5,3,0.04,runs,'unif')/24;
-dv_LHS=LHS_Call(0.8,11.4,22,0.04,runs,'unif')/24;
+%beta_LHS=lhsnorm(2.02,1,runs)*1e-7/24;
+%alpha_LHS=lhsnorm(22.55,10,runs)/24;
+beta_LHS=LHS_Call(0.8*2.02,2.02,1.2*2.02,0.04,runs,'unif')*1e-7/24;
+alpha_LHS=LHS_Call(0.8*22.55,22.55,1.2*22.55,0.04,runs,'unif')/24;
+Dv_LHS=LHS_Call(0.8*15.8,15.8,1.2*15.8,0.04,runs,'unif')*1e-8*3600;
+di_LHS=LHS_Call(0.8*1.5,1.5,1.2*1.5,0.04,runs,'unif')/24;
+dv_LHS=LHS_Call(0.8*11.4,11.4,11.4*1.2,0.04,runs,'unif')/24;
 
 y=[];
 for i=1:runs
@@ -32,8 +34,11 @@ for j=1:N
 end
 
 bar(PRCC)
+ylabel('Sensitivity indexes of R_0')
 title('Sensitivity of R_0 of without drug model with respect to model parameters')
+ylim([-1,1])
 set(gca,'xTick',1:5,'xTicklabel',{'\beta','\alpha','D_v','d_I','d_v'})
+print prcc1.eps -depsc2 -r600
 
 function r=ranking(x)
 
