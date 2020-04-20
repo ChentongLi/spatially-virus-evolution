@@ -1,6 +1,18 @@
-function prccdrugA
+function prccdrugA()
 
-runs=10000;
+p=[];
+for i=1:1000
+    p=[prcc();p];
+end
+% save prcc.mat p
+
+bar(mean(p))
+title('Sensitivity of R_0 of with Asunaprevir model with respect to model parameters')
+set(gca,'xTick',1:7,'xTicklabel',{'CL_{int}','Q','T','f_u','CL','D','IC_{50}'})
+
+function PRCC=prcc()
+
+runs=1000;
 
 clint_lhs=LHS_Call(1.83*0.8,1.83,1.83*1.2,0.04,runs,'unif')*1e-2;
 Q_lhs=LHS_Call(1.2*0.8,1.2,1.2*1.2,0.04,runs,'unif');
@@ -33,9 +45,9 @@ for j=1:N
     PRCC=[PRCC,corr(y_res,x_res)];
 end
 
-bar(PRCC)
-title('Sensitivity of R_0 of with Asunaprevir model with respect to model parameters')
-set(gca,'xTick',1:7,'xTicklabel',{'CL_{int}','Q','T','f_u','CL','D','IC_{50}'})
+% bar(PRCC)
+% title('Sensitivity of R_0 of with Asunaprevir model with respect to model parameters')
+% set(gca,'xTick',1:7,'xTicklabel',{'CL_{int}','Q','T','f_u','CL','D','IC_{50}'})
 
 function r=ranking(x)
 
