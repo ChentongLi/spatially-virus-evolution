@@ -62,8 +62,8 @@ ds=1.2*1e-3/24;
 % Dv=15.8*1e-8*60*60;
 
 diffusionv=diag(ones(Lm,1)*(-2*Dv/dx^2))+diag(ones(Lm-1,1)*(Dv/dx^2),1)+diag(ones(Lm-1,1)*(Dv/dx^2),-1);
-diffusionv(1,1)=Dv/dx^2;diffusionv(Lm,Lm)=Dv/dx^2;
-S0=lambda/ds;
+diffusionv(1,1)=Dv/dx;diffusionv(1,2)=-Dv/dx;
+diffusionv(Lm,Lm-1)=Dv/dx;diffusionv(Lm,Lm)=-Dv/dx;S0=lambda/ds;
 
 F=[zeros(Lm,Lm),diag(S0*beta*ones(Lm,1));zeros(Lm,Lm),zeros(Lm,Lm)];
 V=[di*eye(Lm),zeros(Lm,Lm);-diag(ones(Lm,1)*alpha),dv*eye(Lm)-diffusionv];
