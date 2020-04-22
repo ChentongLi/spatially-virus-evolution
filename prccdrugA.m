@@ -86,8 +86,8 @@ A=D/vd*exp(-g*x/Q)/(exp(d*T)-1);
 p=alpha/d*log((IC50*exp(d*T)+A)./(IC50+A)); % result of \int_0^T p(x,t) dt
 
 diffusionv=diag(ones(Lm,1)*(-2*Dv/dx^2))+diag(ones(Lm-1,1)*(Dv/dx^2),1)+diag(ones(Lm-1,1)*(Dv/dx^2),-1);
-diffusionv(1,1)=Dv/dx;diffusionv(1,2)=-Dv/dx;
-diffusionv(Lm,Lm-1)=Dv/dx;diffusionv(Lm,Lm)=-Dv/dx;
+diffusionv(1,1)=-2*Dv/dx^2;diffusionv(1,2)=2*Dv/dx^2;
+diffusionv(Lm,Lm-1)=2*Dv/dx^2;diffusionv(Lm,Lm)=-2*Dv/dx^2;
 S0=lambda/ds;
 
 F=[zeros(Lm,Lm),diag(S0*beta*ones(Lm,1));zeros(Lm,Lm),zeros(Lm,Lm)];
