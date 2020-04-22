@@ -17,7 +17,8 @@ r2=5.5/24;
 Sm=lambda/ds;
 
 diffusionv=diag(ones(Lm,1)*(-2*Dv/dx^2))+diag(ones(Lm-1,1)*(Dv/dx^2),1)+diag(ones(Lm-1,1)*(Dv/dx^2),-1);
-
+diffusionv(1,1)=-2*Dv/dx^2;diffusionv(1,2)=2*Dv/dx^2;
+diffusionv(Lm,Lm-1)=2*Dv/dx^2;diffusionv(Lm,Lm)=-2*Dv/dx^2;
 rho=2e3;
 clintA=1.83*1e-2;
 Q=1.2;TA=12;fuA=0.01;
