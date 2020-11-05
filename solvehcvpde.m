@@ -39,7 +39,9 @@ clA=49.5;vdA=194;
 DA=200*1e3;
 IC50A=2.45;
 
-clintD=4.34*1e-3;
+clintD=4.34*1e-3; % The value here comes from the PHD Thesis "Smolders, E.J., 2017. A pharmacist’s contribution to eradicate hepatitis c., Ph.D. thesis"
+% By our poor calculation, this value is smaller than the real one, which is around 1. 
+% P.S. As the fu is so small, the results we illustrated in our work still stay the right. 
 TD=24;fuD=0.006;
 clD=4.2;vdD=47;
 DD=50*1e3;
