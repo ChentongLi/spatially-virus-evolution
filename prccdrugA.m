@@ -8,7 +8,7 @@ end
 % save prcc.mat p
 
 bar(mean(p))
-% if just want to get the similar result as we paper showed, using bar(prcc()) is OK.
+% if just want to get the quickly similar result as we paper showed, using bar(prcc()) is OK.
 
 title('Sensitivity of R_0 of with Asunaprevir model with respect to model parameters')
 set(gca,'xTick',1:7,'xTicklabel',{'CL_{int}','Q','T','f_u','CL','D','IC_{50}'})
