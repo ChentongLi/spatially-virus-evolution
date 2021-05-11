@@ -1,6 +1,7 @@
 % dt=0.05;
 % this is the newton method to find the root.
 % this method is worked for the model that the spectral radius go to 1 as the parameter go to infinity (which works bad for line search method). 
+% the model list here is a new model. 
 dx=0.1;
 x=-10:dx:10;
 Lm=length(x);
