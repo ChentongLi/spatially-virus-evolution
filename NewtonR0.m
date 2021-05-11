@@ -1,4 +1,5 @@
 % dt=0.05;
+% this is the newton method to find the root.
 dx=0.1;
 x=-10:dx:10;
 Lm=length(x);
